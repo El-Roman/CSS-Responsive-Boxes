@@ -1,3 +1,57 @@
+* {
+  border: 1px solid black;
+}
+
 body {
   background: peachpuff;
+}
+
+@media (max-width: 600px) {
+  * {
+    border: 1px solid purple;
+  }
+
+
+  div {
+    display: flex;
+    padding: 10px;
+    margin: 2px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 10px;
+    height: 100vh;
+  }
+
+  .a {
+    grid-column: span 3;
+  }
+
+  .h {
+    grid-column: span 3;
+    min-height: 400px;
+  }
+}
+
+
+@media (min-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 10px;
+    height: 100vh;
+  }
+
+  .a {
+    grid-column: span 4;
+  }
+
+  .h {
+    grid-row: 2/ 4;
+    grid-column: -1/4;
+  }
 }
